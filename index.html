@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+    <div class="name">
+        Martin Magana
+    </div>
+    
+</body>
+<!-- <script src="js/index.js"></script> -->
+<script>
+    // check if the browser supports sw 
+    if(!('serviceWorker' in navigator)){
+        console.log('SW is Not Supported');
+        // return ;
+    }
+
+
+    // register a new sw 
+    navigator.serviceWorker.register('serviceWorker.js')
+    .then((reg)=>{
+        console.log('Service Worker Registered Scope Is',reg.scope);
+    })
+
+    .catch((err)=>{
+        console.log(err);
+    })
+
+</script>
+</html>
